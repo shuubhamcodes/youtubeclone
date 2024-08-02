@@ -1,9 +1,67 @@
-import React from 'react'
+// import React from "react";
+// import { Stack, Box } from "@mui/material";
 
-const Videos = () => {
+// import { ChannelCard,  VideoCard } from "./";
+// const Videos = ({ videos }) => {
+
+  
+//   return (
+//     <Stack direction= "row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
+//       {videos.map((item, idx) => (
+//         <Box key={idx}>
+//           {item.id.videoId && <VideoCard video={item} /> }
+//           {item.id.channelId && <ChannelCard channelDetail={item} />}
+//         </Box>
+//       ))}
+//     </Stack>
+//   );
+// }
+
+// export default Videos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+import { Stack, Box } from "@mui/material";
+import { ChannelCard, VideoCard } from "./";
+
+const Videos = ({ videos }) => {
+  if (!videos || videos.length === 0) {
+    return <div>No videos found</div>; // Render a message if there are no videos
+  }
+
   return (
-    <div>Videos</div>
-  )
+    <Stack direction="row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
+      {videos.map((item, idx) => (
+        <Box key={idx}>
+          {item.id.videoId && <VideoCard video={item} />}
+          {item.id.channelId && <ChannelCard channelDetail={item} />}
+        </Box>
+      ))}
+    </Stack>
+  );
 }
 
-export default Videos
+export default Videos;
