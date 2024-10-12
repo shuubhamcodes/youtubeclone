@@ -1,12 +1,13 @@
 // import React from "react";
 // import { Stack, Box } from "@mui/material";
 
-// import { ChannelCard,  VideoCard } from "./";
-// const Videos = ({ videos }) => {
+// import { ChannelCard, Loader, VideoCard } from "./";
 
+// const Videos = ({ videos, direction }) => {
+//   if(!videos?.length) return <Loader />;
   
 //   return (
-//     <Stack direction= "row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
+//     <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
 //       {videos.map((item, idx) => (
 //         <Box key={idx}>
 //           {item.id.videoId && <VideoCard video={item} /> }
@@ -28,32 +29,27 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// src/components/Videos.js
 import React from "react";
 import { Stack, Box } from "@mui/material";
-import { ChannelCard, VideoCard } from "./";
+import { ChannelCard, Loader, VideoCard } from "./";
 
-const Videos = ({ videos }) => {
-  if (!videos || videos.length === 0) {
-    return <div>No videos found</div>; // Render a message if there are no videos
-  }
+const Videos = ({ videos, direction }) => {
+  if (!videos?.length) return (
+    <Box justifyContent="center" alignItems="center" width="100%" height="100%">
+      <Loader />
+    </Box>
+  );
 
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
+    <Stack
+      direction={direction || "row"}
+      flexWrap="wrap"
+      justifyContent="start"
+      alignItems="start"
+      gap={2}
+      p={1}
+    >
       {videos.map((item, idx) => (
         <Box key={idx}>
           {item.id.videoId && <VideoCard video={item} />}
@@ -65,3 +61,4 @@ const Videos = ({ videos }) => {
 }
 
 export default Videos;
+

@@ -3,13 +3,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black; /* Set background color to black */
-  color: white; /* Set text color to white for visibility */
 }
 
 a {
   text-decoration: none;
-  color: white; /* Change link color to white for visibility */
+  color: black;
 }
 
 ::-webkit-scrollbar {
@@ -32,7 +30,7 @@ a {
   color: white !important;
 }
 
-.category-btn:hover span {
+.category-btn:hover span{
   color: white !important;
 }
 
@@ -41,22 +39,23 @@ a {
   width: 100% !important;
 }
 
-.search-bar {
-  border: none;
-  outline: none;
-  width: 350px;
+.search-bar{
+  border:none;
+  outline:none;
+  width:350px;
 }
 
-.category-btn {
+.category-btn{
   font-weight: bold !important;
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: start;
-  cursor: pointer;
+  cursor:pointer;
   background: transparent;
   outline: none;
   border: none;
+
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
@@ -64,14 +63,14 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .category-btn {
+  .category-btn{
     margin: 10px;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .copyright {
-    display: none !important;
+@media screen and (max-width:800px){
+  .copyright{
+    display:none !important;
   }
 }
 
@@ -83,8 +82,7 @@ a {
   .react-player {
     height: 45vh !important;
   }
-
-  .search-bar {
-    width: 200px;
+  .search-bar{
+    width:200px;
   }
 }
